@@ -28,6 +28,10 @@ function AccountAnalysis() {
   minDate.setFullYear(minDate.getFullYear() - 1);
   const minDateString = minDate.toISOString().split('T')[0]; // Formato YYYY-MM-DD
 
+  // Obtener la fecha máxima permitida (la fecha actual)
+  const maxDate = new Date();
+  const maxDateString = maxDate.toISOString().split('T')[0]; // Formato YYYY-MM-DD
+
   const isSubmitDisabled = !username || !startDate;
   
   
@@ -82,6 +86,7 @@ function AccountAnalysis() {
               onChange={(e) => setStartDate(e.target.value)} 
               className="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
               min={minDateString} // Establece la fecha mínima permitida
+              max={maxDateString} // Establece la fecha máxima permitida
             />
           </div>
         </div>
@@ -109,7 +114,13 @@ function AccountAnalysis() {
         )}
       </div>
 
-      {mediaData && (
+      {mediaData && mediaData.length === 0 && (
+        <div className="mt-8 text-center text-gray-600">
+          <p>No content found for the selected period.</p>
+        </div>
+      )}
+
+      {mediaData && mediaData.length > 0 && (
         <div className="w-full max-w-5xl mb-12">
           <div className="flex justify-end mb-4">
             <div className="flex flex-col w-full max-w-xs">
