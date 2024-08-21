@@ -1,0 +1,7 @@
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales por fila */
+    gap: 16px; /* Espacio entre las tarjetas */
+    padding: 16px;
+  }
+  

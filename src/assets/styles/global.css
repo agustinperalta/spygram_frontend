@@ -1,0 +1,18 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+  
+  .App {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .media-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
