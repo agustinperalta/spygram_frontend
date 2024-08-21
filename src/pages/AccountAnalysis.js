@@ -78,7 +78,7 @@ function AccountAnalysis() {
             />
           </div>
           <div className="flex flex-col flex-1 relative" onClick={handleDateClick}>
-            <label htmlFor="startDate" className="text-lg font-semibold text-gray-800 mb-2">Date Since</label>
+            <label htmlFor="startDate" className="text-lg font-semibold text-gray-800 mb-2">Date From</label>
             <input 
               id="startDate"
               type="date" 
@@ -115,7 +115,7 @@ function AccountAnalysis() {
       </div>
 
       {mediaData && mediaData.length === 0 && (
-        <div className="mt-8 text-center text-gray-600">
+        <div className="mt-8 text-center text-white">
           <p>No content found for the selected period.</p>
         </div>
       )}
