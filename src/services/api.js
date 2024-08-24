@@ -18,7 +18,7 @@ function getCsrfTokenFromCookie() {
 // Función para obtener el token CSRF desde el backend
 async function fetchCsrfToken() {
   try {
-    const response = await fetch('http://localhost:8000/csrftoken', {
+    const response = await fetch('https://my-fastapi-app-lp5fallhfa-uc.a.run.app/csrftoken', {
       method: 'GET',
       credentials: 'include', // Asegúrate de incluir las cookies en la solicitud
     });
@@ -47,7 +47,7 @@ export async function fetchAccountData(username, startDate, selectedProfileMetri
   selectedProfileMetrics.forEach(metric => params.append('account_metrics', metric));
   selectedContentMetrics.forEach(metric => params.append('media_metrics', metric));
 
-  const url = `http://localhost:8000/discoveryaccount/?${params.toString()}`;
+  const url = `https://my-fastapi-app-lp5fallhfa-uc.a.run.app/discoveryaccount/?${params.toString()}`;
   
   console.log("Generated URL:", url);
 
