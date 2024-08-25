@@ -8,7 +8,7 @@ function MediaCard({ media }) {
     <div className="card bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
       <div className="media-container">
         {media.media_url && ['REEL', 'VIDEO'].includes(media.media_type) ? (
-          <video className="media" controls>
+          <video className="media" controls playsInline muted>
             <source src={media.media_url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
