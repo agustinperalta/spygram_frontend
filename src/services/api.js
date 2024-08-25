@@ -24,7 +24,12 @@ async function fetchCsrfToken() {
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch CSRF token');
+      if (response.status === 429) {
+        // Si se devuelve un 429, muestra un mensaje específico
+        throw new Error('You have made too many requests in a short period. Please wait for an hour before trying again.');
+      } else {
+        throw new Error('Failed to fetch CSRF token');
+      }
     }
 
     const data = await response.json();
